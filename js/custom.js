@@ -5,6 +5,7 @@ const body = document.querySelector("body");
 const themeChangeIcon = document.querySelector("#themeChangeIcon");
 
 themeChangeIcon.onclick = function (event) {
+  /* Change toggle icon */
   let iconClassList = event.target.classList;
   if (iconClassList.contains("fa-moon")) {
     iconClassList.add("fa-sun");
@@ -13,8 +14,13 @@ themeChangeIcon.onclick = function (event) {
     iconClassList.add("fa-moon");
     iconClassList.remove("fa-sun");
   }
-  console.log(iconClassList);
-  body.classList.toggle("light");
+
+  /* Change theme */
+  if (body.classList.contains("light")) {
+    body.classList.remove("light");
+  } else {
+    body.classList.add("light");
+  }
 };
 
 /**
